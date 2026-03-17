@@ -1,0 +1,1 @@
+INSERT INTO country (name, iso_code) VALUES (%s,%s)

@@ -1,0 +1,3 @@
+zeep
+mysql-connector-python
+python-dotenv
