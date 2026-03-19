@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 
-CONST_ALLOWED_ENVIRONMENTS = ["DEV", "TST", "ACC", "PROD"]
+CONST_ALLOWED_ENVIRONMENTS = ["LOCAL", "DEV", "TST", "ACC", "PROD"]
 
 class EnvironmentConfig:
     environment: str

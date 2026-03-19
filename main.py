@@ -1,4 +1,4 @@
-
+import math
 from dtos.country import Country
 from services.country_api_service import CountryApiService
 from services.country_database_service import DatabaseService
@@ -16,8 +16,11 @@ def main():
     formatted_countries = list(map(replace_symbol_to_and, countries))
     
     db_service.create_countries_table_if_not_exist()
+
+    logger.info("Starting a refresh of country table contents")
     db_service.clear_country_table()
     db_service.insert_into_country(formatted_countries)
+    logger.info("Refreshed country")
 
     # Python selection of first 10 countries
     first_10_countries = formatted_countries[:10]
@@ -27,7 +30,7 @@ def main():
     # SQL selection of first 10 countries
     output = db_service.select_first_10_countries()
     logger.info("SQL OUTPUT")
-    logger.info(output)
+    logger.info(output)    
     
 
 def replace_symbol_to_and(country: Country):
