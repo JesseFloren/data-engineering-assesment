@@ -24,13 +24,18 @@ def main():
 
     # Python selection of first 10 countries
     first_10_countries = formatted_countries[:10]
-    logger.info("PYTHON OUTPUT")
-    logger.info(first_10_countries)
+    logger.info("Printing python output")
+    for country in first_10_countries:
+        print(country)
 
     # SQL selection of first 10 countries
     output = db_service.select_first_10_countries()
-    logger.info("SQL OUTPUT")
-    logger.info(output)    
+    logger.info("Printing sql output")
+    for country in output:
+        print(country)
+
+    assert first_10_countries == output
+    logger.info("Succesfullt asserted equality between the python output and database output")
     
 
 def replace_symbol_to_and(country: Country):
