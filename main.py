@@ -34,8 +34,9 @@ def main():
     for country in output:
         print(country)
 
+    # Guarentee that the database insert and retrievel did not alter order or contents of country
     assert first_10_countries == output
-    logger.info("Succesfullt asserted equality between the python output and database output")
+    logger.info("Succesfully asserted equality between the python output and database output")
     
 
 def replace_symbol_to_and(country: Country):
